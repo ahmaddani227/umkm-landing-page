@@ -16,6 +16,18 @@ const HeroSection = () => {
     return () => clearInterval(interval);
   }, []);
 
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    const offset = 80;
+
+    if (element) {
+      window.scrollTo({
+        top: element.offsetTop - offset,
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
     <section className="sm:pt-[120px] container space-y-7 sm:space-y-10 pt-[100px] pb-10">
       <p className="text-center text-primary flex justify-center gap-2.5">
@@ -33,8 +45,14 @@ const HeroSection = () => {
       </p>
 
       <div className="mx-auto flex gap-4 sm:max-w-[400px] max-w-[300px]">
-        <Button className="flex-1">Strategi Kami</Button>
-        <Button className="flex-1" variant={"secondary"}>
+        <Button className="flex-1" onClick={() => scrollToSection("about")}>
+          Strategi Kami
+        </Button>
+        <Button
+          className="flex-1"
+          variant={"secondary"}
+          onClick={() => scrollToSection("list")}
+        >
           List UMKM
         </Button>
       </div>
