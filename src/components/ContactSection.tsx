@@ -4,6 +4,8 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { motion } from "motion/react";
+import type { Variants } from "motion/react";
 import {
   Form,
   FormControl,
@@ -12,9 +14,9 @@ import {
   FormLabel,
   FormMessage,
 } from "../components/ui/form";
-import { Input } from "..//components/ui/input";
-import { Textarea } from "..//components/ui/textarea";
-import { Button } from "..//components/ui/button";
+import { Input } from "../components/ui/input";
+import { Textarea } from "../components/ui/textarea";
+import { Button } from "../components/ui/button";
 import { toast } from "sonner";
 import { Loader2 } from "lucide-react";
 
@@ -26,6 +28,15 @@ const formSchema = z.object({
 
 type FormValues = z.infer<typeof formSchema>;
 
+const fadeUp: Variants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: (delay: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: { delay, duration: 0.6, ease: "easeOut" },
+  }),
+};
+
 const ContactSection = () => {
   const [loading, setLoading] = useState(false);
 
@@ -36,14 +47,9 @@ const ContactSection = () => {
 
   const onSubmit = async () => {
     setLoading(true);
-
     await new Promise((res) => setTimeout(res, 1800));
-
     setLoading(false);
-    toast.success(
-      "Terima kasih! Pesanmu sudah terkirim. Kami akan menghubungi kamu."
-    );
-
+    toast.success("Terima kasih! Pesanmu sudah terkirim 🙌");
     form.reset();
   };
 
@@ -52,20 +58,48 @@ const ContactSection = () => {
       className="container py-10 sm:py-0 text-center space-y-8"
       id="contact"
     >
-      <div className="text-sm sm:text-lg text-primary flex justify-center gap-2.5 items-center">
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={fadeUp}
+        custom={0.1}
+        className="text-sm sm:text-lg text-primary flex justify-center gap-2.5 items-center"
+      >
         <div className="animate-shake-slow">💬</div>Hubungi Kami
-      </div>
+      </motion.div>
 
-      <h2 className="text-[24px] sm:text-[40px] font-recoleta">
+      <motion.h2
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={fadeUp}
+        custom={0.2}
+        className="text-[24px] sm:text-[40px] font-recoleta"
+      >
         Kami Siap Mendengar Cerita dan Ide Anda
-      </h2>
+      </motion.h2>
 
-      <p className="text-[12px] sm:text-sm opacity-70 max-w-[400px] mx-auto">
+      <motion.p
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={fadeUp}
+        custom={0.3}
+        className="text-[12px] sm:text-sm opacity-70 max-w-[400px] mx-auto"
+      >
         Punya pertanyaan, saran, atau ingin berkolaborasi? Kirimkan pesanmu
         melalui form di bawah ini.
-      </p>
+      </motion.p>
 
-      <div className="max-w-[500px] mx-auto text-left">
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={fadeUp}
+        custom={0.4}
+        className="max-w-[500px] mx-auto text-left mb-7"
+      >
         <Form {...form}>
           <form
             onSubmit={form.handleSubmit(onSubmit)}
@@ -81,6 +115,7 @@ const ContactSection = () => {
                     <Input
                       placeholder="Masukkan nama lengkap kamu"
                       {...field}
+                      className="transition-all duration-300 focus:ring-2 focus:ring-primary/70 focus:shadow-[0_0_15px_rgba(190,255,0,0.3)]"
                     />
                   </FormControl>
                   <FormMessage />
@@ -99,6 +134,7 @@ const ContactSection = () => {
                       placeholder="contoh@email.com"
                       type="email"
                       {...field}
+                      className="transition-all duration-300 focus:ring-2 focus:ring-primary/70 focus:shadow-[0_0_15px_rgba(190,255,0,0.3)]"
                     />
                   </FormControl>
                   <FormMessage />
@@ -115,7 +151,7 @@ const ContactSection = () => {
                   <FormControl>
                     <Textarea
                       placeholder="Tulis pesan kamu di sini..."
-                      className="min-h-[120px]"
+                      className="min-h-[120px] transition-all duration-300 focus:ring-2 focus:ring-primary/70 focus:shadow-[0_0_15px_rgba(190,255,0,0.3)]"
                       {...field}
                     />
                   </FormControl>
@@ -124,19 +160,29 @@ const ContactSection = () => {
               )}
             />
 
-            <Button type="submit" className="w-full" disabled={loading}>
-              {loading ? (
-                <>
-                  <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                  Mengirim...
-                </>
-              ) : (
-                "Kirim Pesan"
-              )}
-            </Button>
+            <motion.div
+              variants={fadeUp}
+              custom={0.5}
+              className="w-full flex justify-center"
+            >
+              <Button
+                type="submit"
+                className="w-full transition-all duration-300 hover:scale-[1.02]"
+                disabled={loading}
+              >
+                {loading ? (
+                  <>
+                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                    Mengirim...
+                  </>
+                ) : (
+                  "Kirim Pesan"
+                )}
+              </Button>
+            </motion.div>
           </form>
         </Form>
-      </div>
+      </motion.div>
     </section>
   );
 };

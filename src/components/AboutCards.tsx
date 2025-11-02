@@ -1,5 +1,6 @@
 import { Home, Globe, Sparkles, Store } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
+import type { Variants } from "motion/react";
 
 const cards = [
   {
@@ -32,12 +33,41 @@ const cards = [
   },
 ];
 
+const container: Variants = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.2,
+    },
+  },
+};
+
+const cardVariant: Variants = {
+  hidden: { opacity: 0, y: 40, scale: 0.95 },
+  show: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: {
+      duration: 0.8,
+      ease: [0.25, 1, 0.5, 1],
+    },
+  },
+};
+
 const AboutCards = () => {
   return (
-    <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 text-left">
+    <motion.div
+      className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 text-left"
+      variants={container}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true, amount: 0.3 }}
+    >
       {cards.map((card, index) => (
         <motion.div
           key={index}
+          variants={cardVariant}
           whileHover={{
             scale: 1.02,
             y: -4,
@@ -66,7 +96,7 @@ const AboutCards = () => {
           </div>
         </motion.div>
       ))}
-    </div>
+    </motion.div>
   );
 };
 

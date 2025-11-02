@@ -5,10 +5,11 @@ import AboutSection from "../components/AboutSection";
 import FaqSection from "../components/FaqSection";
 import FloatingNav from "../components/FloatingNav";
 import Header from "../components/Header";
-import HeroSection from "../components/HeroSection";
 import SMEListSection from "../components/SMEListSection";
 import ContactSection from "../components/ContactSection";
 import Footer from "../components/Footer";
+import Preloader from "../components/animations/Preloader";
+import HeroSection from "../components/HeroSection";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);

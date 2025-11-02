@@ -39,6 +39,9 @@ export const data = [
       "Live music mingguan",
       "Layanan catering untuk acara kampus",
     ],
+
+    // Map Embed
+    mapUrl: `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3959.005122994729!2d112.7220947099047!3d-7.125401692848708!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd803004530a999%3A0x88e0266c86c0a9cc!2sWarkop%20Titiek%20Djaya!5e0!3m2!1sid!2sid!4v1762098309781!5m2!1sid!2sid`,
   },
   {
     id: 2,
@@ -80,6 +83,8 @@ export const data = [
       "Kolaborasi dengan komunitas kampus",
       "Event budaya bulanan",
     ],
+
+    mapUrl: `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3959.003798118106!2d112.72145923916857!3d-7.125555074571433!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd8033a545a2a27%3A0x1f83fbae2709d4bb!2sWarunk%20Boedjang%20Lapoek_Madura!5e0!3m2!1sid!2sid!4v1762098458823!5m2!1sid!2sid`,
   },
   {
     id: 3,
@@ -117,6 +122,8 @@ export const data = [
       "Private study room rental",
       "24/7 operation during exam period",
     ],
+
+    mapUrl: `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3959.0038731096215!2d112.72390130990465!3d-7.1255463928485625!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd8030006544913%3A0x3bbff84336dd61e2!2sARBAN%20KOPI!5e0!3m2!1sid!2sid!4v1762098503395!5m2!1sid!2sid`,
   },
   {
     id: 4,
@@ -158,6 +165,8 @@ export const data = [
       "Seasonal menu collaboration dengan influencer",
       "Loyalty program digital",
     ],
+
+    mapUrl: `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3959.004829312868!2d112.72142720990463!3d-7.12543569284869!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd803ec94757f1d%3A0x9afba76bcd19c05b!2sLapota%20Cafe!5e0!3m2!1sid!2sid!4v1762098524073!5m2!1sid!2sid`,
   },
   {
     id: 5,
@@ -199,6 +208,8 @@ export const data = [
       "Toast box delivery service",
       "Collaboration dengan local baker",
     ],
+
+    mapUrl: `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3959.0049873829835!2d112.7209599099047!3d-7.125417392848703!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd803829c499f6d%3A0xafd1bff9bddb6241!2sJotoast%20Cafe!5e0!3m2!1sid!2sid!4v1762098560914!5m2!1sid!2sid`,
   },
   {
     id: 6,
@@ -240,6 +251,8 @@ export const data = [
       "Bean subscription service",
       "Partnership dengan delivery apps",
     ],
+
+    mapUrl: `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3959.0043974252458!2d112.71804670990471!3d-7.125485692848646!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd803359992bce9%3A0x602e5bf6be98adb!2sSwarna%20kopi!5e0!3m2!1sid!2sid!4v1762098600177!5m2!1sid!2sid`,
   },
   {
     id: 7,
@@ -281,6 +294,8 @@ export const data = [
       "Kemitraan franchise",
       "Product line extension",
     ],
+
+    mapUrl: `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3959.006771042366!2d112.71609870990468!3d-7.125210892848917!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd8038b4b5dfadd%3A0xfd88443d4b6cdae1!2sKOPI%20JOY!5e0!3m2!1sid!2sid!4v1762098631692!5m2!1sid!2sid`,
   },
   {
     id: 8,
@@ -322,6 +337,8 @@ export const data = [
       "3D printing service",
       "Merchandise production service",
     ],
+
+    mapUrl: `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3959.00476539369!2d112.7164775099047!3d-7.125443092848659!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd803e0e5f5beb3%3A0x6c0ae2ac180c0755!2sEbece%20Digital%20Print!5e0!3m2!1sid!2sid!4v1762098664480!5m2!1sid!2sid`,
   },
   {
     id: 9,
@@ -363,6 +380,9 @@ export const data = [
       "Local coffee bean e-commerce",
       "Collaboration dengan tourism board",
     ],
+
+    mapUrl:
+      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3959.00516618312!2d112.72271010990475!3d-7.12539669284874!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd803c8d64d180b%3A0x29c5712b60f5cce9!2sKopi%20Desa!5e0!3m2!1sid!2sid!4v1762098696579!5m2!1sid!2sid",
   },
   {
     id: 10,
@@ -404,5 +424,8 @@ export const data = [
       "Pengembangan aplikasi mobile loyalty",
       "Kolaborasi dengan komunitas kampus",
     ],
+
+    mapUrl:
+      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3959.0040467302792!2d112.7176235099048!3d-7.125526292848601!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd803d917835b1f%3A0xc15bbe8e32270072!2sKedai%203%20Sisi!5e0!3m2!1sid!2sid!4v1762098723682!5m2!1sid!2sid",
   },
 ];

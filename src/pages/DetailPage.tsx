@@ -16,6 +16,7 @@ import {
   Phone,
   MapPinIcon,
   Star,
+  Map,
 } from "lucide-react";
 import { useEffect } from "react";
 import { motion } from "framer-motion";
@@ -43,6 +44,8 @@ interface UmkmData {
     instagram?: string;
   };
   rencanaPengembangan?: string[];
+
+  mapUrl: string;
 }
 
 const DetailPage = () => {
@@ -494,6 +497,28 @@ const DetailPage = () => {
               ))}
             </motion.div>
           </motion.section>
+
+          {umkmData.mapUrl && (
+            <motion.section variants={itemVariants}>
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
+                  <Map className="w-6 h-6 text-primary" />
+                </div>
+                <h2 className="text-2xl sm:text-3xl font-recoleta font-semibold">
+                  Lokasi
+                </h2>
+              </div>
+              <div className="w-full h-[500px] mb-5 overflow-hidden">
+                <iframe
+                  src={umkmData.mapUrl}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  className="w-full h-full"
+                ></iframe>
+              </div>
+            </motion.section>
+          )}
         </motion.div>
       </div>
     </div>
