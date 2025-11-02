@@ -3,7 +3,7 @@ import type { Variants } from "motion/react";
 import { data } from "../lib/data";
 import { Button } from "./ui/button";
 import { useEffect, useState } from "react";
-import { AnimatePresence } from "framer-motion";
+import { AnimatePresence } from "motion/react";
 
 const HeroSection = () => {
   const container: Variants = {

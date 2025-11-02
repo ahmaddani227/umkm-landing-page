@@ -1,5 +1,5 @@
 import { Home, Globe, Sparkles, Store } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import type { Variants } from "motion/react";
 
 const cards = [

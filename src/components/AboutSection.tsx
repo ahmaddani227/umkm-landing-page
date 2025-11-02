@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import AboutCards from "./AboutCards";
 import type { Variants } from "motion/react";
 

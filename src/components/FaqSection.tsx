@@ -5,11 +5,13 @@ import {
   AccordionTrigger,
 } from "./ui/accordion";
 
+import { motion } from "motion/react";
+import type { Variants } from "motion/react";
+
 interface FaqItem {
   question: string;
   answer: string;
 }
-
 const faq: FaqItem[] = [
   {
     question: "Apa dasar utama pemilihan UMKM yang didigitalisasi?",
@@ -44,24 +46,47 @@ const faq: FaqItem[] = [
 const scrollToContact = (e: React.MouseEvent<HTMLAnchorElement>) => {
   e.preventDefault();
   const targetElement = document.getElementById("contact");
-
   if (targetElement) {
     const offset = 100;
     const elementPosition = targetElement.getBoundingClientRect().top;
     const offsetPosition = elementPosition + window.scrollY - offset;
-
-    window.scrollTo({
-      top: offsetPosition,
-      behavior: "smooth",
-    });
+    window.scrollTo({ top: offsetPosition, behavior: "smooth" });
   }
+};
+
+const containerVariants: Variants = {
+  hidden: { opacity: 0, y: 40 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      staggerChildren: 0.15,
+      duration: 0.6,
+      ease: [0.25, 1, 0.5, 1],
+    },
+  },
+};
+
+const itemVariants: Variants = {
+  hidden: { opacity: 0, x: 40 },
+  show: { opacity: 1, x: 0, transition: { duration: 0.6, ease: "easeOut" } },
 };
 
 const FaqSection = () => {
   return (
     <section className="container flex-center py-10 sm:py-0" id="faq">
-      <div className="h-fit flex flex-col sm:flex-row justify-between sm:space-x-10">
-        <div className="flex-1 space-y-4 sm:space-y-7 mb-10 sm:mb-0">
+      <motion.div
+        className="h-fit flex flex-col sm:flex-row justify-between sm:space-x-10"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.3 }}
+      >
+        {/* LEFT TEXT BLOCK */}
+        <motion.div
+          className="flex-1 space-y-4 sm:space-y-7 mb-10 sm:mb-0"
+          variants={itemVariants}
+        >
           <div className="text-sm sm:text-lg text-primary flex gap-2.5 items-center">
             <div className="animate-shake-slow">❓</div>Detail Proyek
           </div>
@@ -70,7 +95,6 @@ const FaqSection = () => {
           </h2>
           <p className="text-[12px] sm:text-sm opacity-70">
             Ingin tahu lebih dalam?{" "}
-            {/* Mengganti Link dengan <a> dan onClick untuk smooth scroll */}
             <a
               href="#contact"
               onClick={scrollToContact}
@@ -79,27 +103,38 @@ const FaqSection = () => {
               Hubungi Kami
             </a>
           </p>
-        </div>
+        </motion.div>
 
-        <div className="flex-1">
+        {/* FAQ LIST */}
+        <motion.div className="flex-1" variants={containerVariants}>
           <Accordion type="single" collapsible className="w-full h-fit!">
             {faq.map((item, index) => (
-              <AccordionItem
-                key={index}
-                value={`item-${index}`}
-                className="border-b border-border/50"
-              >
-                <AccordionTrigger className="text-left text-base sm:text-lg hover:no-underline py-4 text font-recoleta">
-                  {item.question}
-                </AccordionTrigger>
-                <AccordionContent className="text-[12px] sm:text-base text-muted-foreground pb-4 pt-0">
-                  {item.answer}
-                </AccordionContent>
-              </AccordionItem>
+              <motion.div key={index} variants={itemVariants}>
+                <AccordionItem
+                  value={`item-${index}`}
+                  className="border-b border-border/50"
+                >
+                  <AccordionTrigger className="text-left text-base sm:text-lg hover:no-underline py-4 font-recoleta transition-all duration-300 hover:text-primary">
+                    {item.question}
+                  </AccordionTrigger>
+                  <AccordionContent
+                    className="text-[12px] sm:text-base text-muted-foreground pb-4 pt-0"
+                    asChild
+                  >
+                    <motion.div
+                      initial={{ opacity: 0, y: -5 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      {item.answer}
+                    </motion.div>
+                  </AccordionContent>
+                </AccordionItem>
+              </motion.div>
             ))}
           </Accordion>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 };
