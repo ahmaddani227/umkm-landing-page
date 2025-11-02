@@ -144,6 +144,7 @@
   --font-inter: "Inter", "sans-serif";
   --font-recoleta: "Recoleta Alt", "serif";
   --animate-shake-slow: shake 1s ease-in-out infinite;
+  --color-whisper: #eaeaea;
 
   @keyframes shake {
     0%,
