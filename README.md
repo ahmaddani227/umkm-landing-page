@@ -1,75 +1,38 @@
-# React + TypeScript + Vite
+# ☕ MaduraKita: Menggali Potensi Lokal, Membawa UMKM ke Layar Global
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+MaduraKita adalah proyek akselerasi digital yang menjembatani **kreasi lokal (UMKM Madura)** dan **pasar digital**. Kami berfokus menciptakan *branding* yang kuat dan membangun ekosistem bisnis yang berkelanjutan bagi wirausaha lokal, diawali dengan studi kasus UMKM di area Telang, Bangkalan.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🛠️ Technology Stack
 
-## React Compiler
+Proyek *landing page* dan ekosistem digital MaduraKita dibangun menggunakan teknologi modern untuk memastikan performa yang cepat dan pengalaman pengguna yang optimal.
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+* **Frontend Framework:** React (Vite)
+* **Styling:** Tailwind CSS
+* **State Management:** Context API (opsional)
+* **Deployment:** Vercel / Netlify
 
-Note: This will impact Vite dev & build performances.
+---
 
-## Expanding the ESLint configuration
+## 🚀 Progress Saat Ini
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Kami telah mencapai tahap pengembangan berikut:
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+* **Landing Page Utama:** Selesai, memuat visi, misi, dan strategi utama proyek.
+* **Halaman Daftar UMKM:** Selesai, menampilkan *list* UMKM yang dikurasi.
+* **Halaman Detail Produk/UMKM:** Selesai, implementasi studi kasus UMKM pertama (**Warkop Titiek Djaya**) dengan detail lokasi, jam operasional, tantangan, dan solusi digital (Penerapan Sistem POS Minimalis & Digitalisasi Menu).
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## ⚙️ Cara Menjalankan Proyek Secara Lokal
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Untuk mengklon dan menjalankan proyek ini di mesin lokal Anda, ikuti langkah-langkah di bawah ini:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### 1. Clone Repository
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Buka terminal atau Git Bash Anda, dan jalankan perintah berikut:
+
+```bash
+git clone [https://github.com/ubaydillah1/umkm-landing-page.git](https://github.com/ubaydillah1/umkm-landing-page.git)
+cd umkm-landing-page
