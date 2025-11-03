@@ -61,4 +61,4 @@ Kami mengucapkan terima kasih yang sebesar-besarnya kepada KSM MULTIMEDIA UPN "V
 
 ## 🤝 Kontribusi
 
-Kami sangat terbuka untuk kontribusi dan *feedback* untuk mengembangkan ekosistem digital UMKM Madura lebih jauh. Silakan ajukan *Pull Request* atau laporkan *issue*.
+Kami sangat terbuka untuk kontribusi dan *feedback* untuk mengembangkan ekosistem digital UMKM Madura lebih jauh.
